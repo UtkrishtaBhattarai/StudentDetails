@@ -3,6 +3,7 @@ package com.example.studentdetails;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -21,9 +22,9 @@ public class MainActivity extends AppCompatActivity {
     RadioGroup rdogrp;
     RadioButton rdomale, rdofemale, rdoothers;
     Spinner spcountry;
-    TextView tvname,tvgender,tvcountry,tvbatch;
+    TextView tvname, tvgender, tvcountry, tvbatch;
     AutoCompleteTextView actvbatch;
-    String[] batch={"22A","22B","22C"};
+    String[] batch = {"22A", "22B", "22C"};
     Button btnsave;
 
     @Override
@@ -31,10 +32,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tvbatch=findViewById(R.id.tvbatch);
-        tvgender=findViewById(R.id.tvgender);
-        tvcountry=findViewById(R.id.tvcountry);
-        tvname=findViewById(R.id.tvname);
+        tvbatch = findViewById(R.id.tvbatch);
+        tvgender = findViewById(R.id.tvgender);
+        tvcountry = findViewById(R.id.tvcountry);
+        tvname = findViewById(R.id.tvname);
         etname = findViewById(R.id.etname);
         rdogrp = findViewById(R.id.rdogrp);
         rdomale = findViewById(R.id.rdomale);
@@ -48,18 +49,46 @@ public class MainActivity extends AppCompatActivity {
         String countries[] = {"Nepal", "India", "Bhutan", "Pakistan", "China"};
 
         ArrayAdapter adapter = new ArrayAdapter<>
-                ( this,android.R.layout.simple_list_item_1,countries
+                (this, android.R.layout.simple_list_item_1, countries
                 );
 
         spcountry.setAdapter(adapter);
 
-        ArrayAdapter<String> stringArrayAdapter=new ArrayAdapter<>
-                (this,android.R.layout.simple_list_item_1,batch);
+        ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<>
+                (this, android.R.layout.simple_list_item_1, batch);
 
         actvbatch.setAdapter(stringArrayAdapter);
         actvbatch.setThreshold(1);
 
 
+        btnsave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                        switch (R.id.rdogrp)
+                        {
+                            case R.id.rdomale:
+                                tvgender.setText("Male");
+                                break;
+
+                            case R.id.rdofemale:
+                                tvgender.setText("Female");
+                                break;
+
+                            case R.id.rdoother:
+                                tvgender.setText("Others");
+                                break;
+                        }
+                tvname.setText(etname.getText());
+                tvbatch.setText(actvbatch.getText());
+                tvcountry.setText(spcountry.getSelectedItem().toString());
+                    }
+
+                });
+
+
+            }
+
 
     }
-}
+

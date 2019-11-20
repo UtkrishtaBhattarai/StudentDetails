@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:scrollbarThumbVertical="@color/colorAccent">
 
     <EditText
         android:id="@+id/etname"
@@ -87,11 +88,13 @@
         android:layout_height="wrap_content"
         android:layout_margin="50dp"
         android:text="Save Details"
-        android:textSize="30dp"></Button>
+        android:textSize="25dp"/>
 
 
 
     <TextView
+        android:textSize="20dp"
+        android:textStyle="bold"
         android:layout_width="match_parent"
         android:textAlignment="center"
         android:layout_height="wrap_content"
@@ -99,6 +102,8 @@
         android:text="Name"/>
 
     <TextView
+        android:textSize="20dp"
+        android:textStyle="bold"
         android:id="@+id/tvname"
         android:textAlignment="center"
         android:layout_width="match_parent"
@@ -108,6 +113,8 @@
 
 
     <TextView
+        android:textSize="20dp"
+        android:textStyle="bold"
         android:layout_width="match_parent"
         android:textAlignment="center"
         android:layout_height="wrap_content"
@@ -115,6 +122,8 @@
         android:text="Gender"/>
 
     <TextView
+        android:textSize="20dp"
+        android:textStyle="bold"
         android:id="@+id/tvgender"
         android:textAlignment="center"
         android:layout_width="match_parent"
@@ -124,6 +133,8 @@
 
 
     <TextView
+        android:textSize="20dp"
+        android:textStyle="bold"
         android:layout_width="match_parent"
         android:textAlignment="center"
         android:layout_height="wrap_content"
@@ -131,6 +142,8 @@
         android:text="Country"/>
 
     <TextView
+        android:textSize="20dp"
+        android:textStyle="bold"
         android:id="@+id/tvcountry"
         android:textAlignment="center"
         android:layout_width="match_parent"
@@ -140,6 +153,8 @@
 
 
     <TextView
+        android:textSize="20dp"
+        android:textStyle="bold"
         android:layout_width="match_parent"
         android:textAlignment="center"
         android:layout_height="wrap_content"
@@ -147,6 +162,8 @@
         android:text="Batch"/>
 
     <TextView
+        android:textSize="20dp"
+        android:textStyle="bold"
         android:id="@+id/tvbatch"
         android:textAlignment="center"
         android:layout_width="match_parent"
