@@ -64,31 +64,21 @@ public class MainActivity extends AppCompatActivity {
         btnsave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                int selectedId = rdogrp.getCheckedRadioButtonId();
+                 RadioButton radioButton;
+                radioButton =findViewById(selectedId);
+               tvgender.setText(radioButton.getText());
 
-                        switch (R.id.rdogrp)
-                        {
-                            case R.id.rdomale:
-                                tvgender.setText("Male");
-                                break;
-
-                            case R.id.rdofemale:
-                                tvgender.setText("Female");
-                                break;
-
-                            case R.id.rdoother:
-                                tvgender.setText("Others");
-                                break;
-                        }
                 tvname.setText(etname.getText());
                 tvbatch.setText(actvbatch.getText());
                 tvcountry.setText(spcountry.getSelectedItem().toString());
-                    }
-
-                });
-
-
             }
+
+        });
 
 
     }
+
+
+}
 
